@@ -12,7 +12,7 @@ const mailSender = async (email, title, body) => {
 
     const sendSmtpEmail = {
       sender: {
-        email: "codex9370@gmail.com",
+        email: "sujeetpal1818@gmail.com",
         name: "StudyNotion",
       },
 
