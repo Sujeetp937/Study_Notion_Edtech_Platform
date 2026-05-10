@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(
     cors({
         // origin: 'https://study-notion-edtech-platform-18.vercel.app/', // frontend link
-        origin: "*",
+        origin: "https://study-notion-edtech-platform-18.vercel.app",
         credentials: true
     })
 );
