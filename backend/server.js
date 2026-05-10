@@ -23,7 +23,7 @@ app.use(express.json()); // to parse json body
 app.use(cookieParser());
 app.use(
     cors({
-        // origin: 'http://localhost:5173', // frontend link
+        // origin: 'https://study-notion-edtech-platform-18.vercel.app/', // frontend link
         origin: "*",
         credentials: true
     })

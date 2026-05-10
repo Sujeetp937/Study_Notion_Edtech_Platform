@@ -49,7 +49,7 @@ export default function MobileProfileDropDown() {
             setLoading(true)
             const res = await fetchCourseCategories();
             // const result = await apiConnector("GET", categories.CATEGORIES_API);
-            // const result = await apiConnector('GET', 'http://localhost:4000/api/v1/course/showAllCategories');
+            // const result = await apiConnector('GET', 'https://study-notion-edtech-platform-18.vercel.app/api/v1/course/showAllCategories');
             // console.log("Printing Sublinks result:", result);
             setSubLinks(res);
         }
