@@ -8,6 +8,12 @@ The application includes authentication, course management, Razorpay payment int
 
 ---
 
+## 🚀 Live Link
+
+https://study-notion-edtech-platform-18.vercel.app
+
+
+---
 # Features
 
 ## Student Features
