@@ -21,16 +21,23 @@ const courseRoutes = require('./routes/course');
 // middleware 
 app.use(express.json()); // to parse json body
 app.use(cookieParser());
+const allowedOrigins = [
+  "https://teachmate.tech",
+  "https://www.teachmate.tech",
+  "https://study-notion-edtech-platform-18.vercel.app", // optional during transition
+];
+
 app.use(
-    cors({
-        // origin: 'https://study-notion-edtech-platform-18.vercel.app/', // frontend link
-        //origin:"https://study-notion-edtech-platform-18.vercel.app",
-        origin: [
-            "https://teachmate.tech",
-            "https://www.teachmate.tech"
-        ],
-        credentials: true
-    })
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
 );
 app.use(
     fileUpload({
