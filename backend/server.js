@@ -24,7 +24,11 @@ app.use(cookieParser());
 app.use(
     cors({
         // origin: 'https://study-notion-edtech-platform-18.vercel.app/', // frontend link
-        origin:"https://study-notion-edtech-platform-18.vercel.app",
+        //origin:"https://study-notion-edtech-platform-18.vercel.app",
+        origin: [
+            "https://teachmate.tech",
+            "https://www.teachmate.tech"
+        ],
         credentials: true
     })
 );
