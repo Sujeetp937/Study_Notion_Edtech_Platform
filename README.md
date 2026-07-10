@@ -2,46 +2,50 @@
 
 ## Overview
 
-StudyNotion is a full-stack EdTech platform built using the MERN stack. The platform allows instructors to create and manage courses while students can enroll in courses, make payments, and track learning progress.
+StudyNotion is a production-ready full-stack EdTech platform built using the MERN stack. The platform enables instructors to create and manage courses while students can browse courses, enroll securely, make online payments, and track their learning progress.
 
-The application includes authentication, course management, Razorpay payment integration, Cloudinary media storage, email verification, password reset functionality, ratings & reviews, and responsive UI.
+The application features JWT authentication, OTP-based email verification, secure password reset, Razorpay payment integration, Cloudinary media management, role-based access control, ratings & reviews, and a responsive user interface. The backend is deployed on **AWS EC2** using **Nginx** and **PM2**, while the frontend is hosted on **Vercel** with a custom domain.
+
+---
+
+# 🚀 Live Demo
+
+### Frontend
+https://www.teachmate.tech
+
+### Backend API
+https://api.teachmate.tech
 
 ---
 
-## 🚀 Live Link
-
-https://study-notion-edtech-platform-18.vercel.app
-
-
----
 # Features
 
 ## Student Features
 
-* User Authentication (Signup/Login)
-* Email Verification with OTP
-* Reset Password Functionality
-* Browse Course Categories
-* Enroll in Courses
-* Razorpay Payment Integration
-* Watch Course Videos
-* Track Course Progress
-* Add Ratings and Reviews
-* Responsive Dashboard
+- User Authentication (Signup/Login)
+- Email Verification using OTP
+- Forgot & Reset Password
+- Browse Course Categories
+- Course Enrollment
+- Razorpay Payment Integration
+- Watch Course Videos
+- Track Course Progress
+- Ratings & Reviews
+- Responsive Dashboard
 
 ## Instructor Features
 
-* Create Courses
-* Add Sections and Subsections
-* Upload Course Thumbnails
-* Manage Published Courses
-* View Instructor Dashboard
-* Edit/Delete Courses
+- Create Courses
+- Add Sections & Subsections
+- Upload Course Thumbnails & Videos
+- Publish/Unpublish Courses
+- Edit/Delete Courses
+- Instructor Dashboard
 
 ## Admin Features
 
-* Create Categories
-* Manage Platform Data
+- Manage Categories
+- Manage Platform Data
 
 ---
 
@@ -49,33 +53,65 @@ https://study-notion-edtech-platform-18.vercel.app
 
 ## Frontend
 
-* React.js
-* Vite
-* Redux Toolkit
-* Tailwind CSS
-* React Router DOM
-* Axios
-* Swiper.js
+- React.js
+- Vite
+- Redux Toolkit
+- Tailwind CSS
+- React Router DOM
+- Axios
+- Swiper.js
 
 ## Backend
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT Authentication
-* Nodemailer
-* Razorpay
-* Cloudinary
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- Brevo (Transactional Email API)
+- Razorpay
+- Cloudinary
 
 ## Database
 
-* MongoDB Atlas
+- MongoDB Atlas
 
 ## Deployment
 
-* Frontend: Vercel
-* Backend: Render
+- **Frontend:** Vercel
+- **Backend:** AWS EC2
+- **Reverse Proxy:** Nginx
+- **Process Manager:** PM2
+- **SSL:** Let's Encrypt
+- **Domain:** teachmate.tech
+
+---
+
+# System Architecture
+
+```text
+                    +----------------------+
+                    |   www.teachmate.tech |
+                    |       (Vercel)       |
+                    +----------+-----------+
+                               |
+                               |
+                    REST API over HTTPS
+                               |
+                               v
+                  +------------------------+
+                  |  api.teachmate.tech    |
+                  |   AWS EC2 + Nginx      |
+                  |     Node.js/Express    |
+                  +-----------+------------+
+                              |
+            +-----------------+-----------------+
+            |                 |                 |
+            |                 |                 |
+     MongoDB Atlas      Cloudinary       Razorpay API
+            |
+      User & Course Data
+```
 
 ---
 
@@ -92,10 +128,11 @@ StudyNotion/
 ├── backend/
 │   ├── config/
 │   ├── controllers/
+│   ├── middlewares/
 │   ├── models/
 │   ├── routes/
-│   ├── middlewares/
 │   ├── mails/
+│   ├── utils/
 │   └── package.json
 │
 └── README.md
@@ -105,39 +142,40 @@ StudyNotion/
 
 # Installation & Setup
 
-## 1. Clone Repository
+## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/studynotion.git
-cd studynotion
+git clone https://github.com/Sujeetp937/Study_Notion_Edtech_Platform.git
+
+cd Study_Notion_Edtech_Platform
 ```
 
 ---
 
 # Backend Setup
 
-## Navigate to backend folder
+Navigate to backend directory
 
 ```bash
 cd backend
 ```
 
-## Install dependencies
+Install dependencies
 
 ```bash
 npm install
 ```
 
-## Create .env file
+Create `.env`
 
 ```env
 PORT=5000
+
 MONGODB_URL=your_mongodb_connection_string
+
 JWT_SECRET=your_jwt_secret
 
-MAIL_HOST=smtp.gmail.com
-MAIL_USER=your_email
-MAIL_PASS=your_app_password
+BREVO_API_KEY=your_brevo_api_key
 
 CLOUD_NAME=your_cloudinary_cloud_name
 API_KEY=your_cloudinary_api_key
@@ -146,17 +184,19 @@ FOLDER_NAME=StudyNotion
 
 RAZORPAY_KEY=your_razorpay_key
 RAZORPAY_SECRET=your_razorpay_secret
+
+FRONTEND_URL=http://localhost:5173
 ```
 
-## Run backend server
+Run backend
 
 ```bash
 npm run dev
 ```
 
-Backend runs on:
+Backend URL
 
-```bash
+```text
 http://localhost:5000
 ```
 
@@ -164,34 +204,35 @@ http://localhost:5000
 
 # Frontend Setup
 
-## Navigate to frontend folder
+Navigate to frontend
 
 ```bash
 cd frontend
 ```
 
-## Install dependencies
+Install dependencies
 
 ```bash
 npm install
 ```
 
-## Create .env file
+Create `.env`
 
 ```env
 VITE_BASE_URL=http://localhost:5000/api/v1
+
 VITE_RAZORPAY_KEY=your_razorpay_key
 ```
 
-## Run frontend
+Run frontend
 
 ```bash
 npm run dev
 ```
 
-Frontend runs on:
+Frontend URL
 
-```bash
+```text
 http://localhost:5173
 ```
 
@@ -201,84 +242,88 @@ http://localhost:5173
 
 ## Authentication
 
-* POST `/api/v1/auth/signup`
-* POST `/api/v1/auth/login`
-* POST `/api/v1/auth/sendotp`
-* POST `/api/v1/auth/reset-password-token`
-* POST `/api/v1/auth/reset-password`
+- POST `/api/v1/auth/signup`
+- POST `/api/v1/auth/login`
+- POST `/api/v1/auth/sendotp`
+- POST `/api/v1/auth/reset-password-token`
+- POST `/api/v1/auth/reset-password`
 
 ## Courses
 
-* POST `/api/v1/course/createCourse`
-* GET `/api/v1/course/showAllCategories`
-* POST `/api/v1/course/getCategoryPageDetails`
+- POST `/api/v1/course/createCourse`
+- GET `/api/v1/course/showAllCategories`
+- POST `/api/v1/course/getCategoryPageDetails`
 
 ## Payments
 
-* POST `/api/v1/payment/capturePayment`
-* POST `/api/v1/payment/verifySignature`
+- POST `/api/v1/payment/capturePayment`
+- POST `/api/v1/payment/verifySignature`
 
 ## Ratings & Reviews
 
-* POST `/api/v1/course/createRating`
-* GET `/api/v1/course/getReviews`
-
----
-
-# Razorpay Test Card
-
-Use the following test card for payment testing:
-
-```text
-Card Number: 4111 1111 1111 1111
-Expiry Date: 12/30
-CVV: 123
-OTP: 1234
-```
+- POST `/api/v1/course/createRating`
+- GET `/api/v1/course/getReviews`
 
 ---
 
 # Deployment
 
-## Frontend Deployment (Vercel)
+## Frontend (Vercel)
 
-1. Push project to GitHub
-2. Import repository in Vercel
-3. Set root directory to `frontend`
-4. Add environment variables
-5. Deploy
+- Deploy React application on Vercel
+- Configure environment variables
+- Connect custom domain (`teachmate.tech`)
+- Enable HTTPS
 
-## Backend Deployment (Render)
+## Backend (AWS EC2)
 
-1. Create Web Service on Render
-2. Connect GitHub repository
-3. Set root directory to `backend`
-4. Add environment variables
-5. Deploy
+- Launch Ubuntu EC2 Instance
+- Configure Security Groups
+- Install Node.js & NPM
+- Clone GitHub Repository
+- Configure Environment Variables
+- Install Dependencies
+- Configure PM2 for Process Management
+- Configure Nginx Reverse Proxy
+- Secure API using Let's Encrypt SSL
+- Connect Backend with Custom Subdomain (`api.teachmate.tech`)
+
+---
+
+# Production Infrastructure
+
+- AWS EC2 (Ubuntu)
+- PM2 Process Manager
+- Nginx Reverse Proxy
+- Let's Encrypt SSL
+- MongoDB Atlas
+- Cloudinary CDN
+- Brevo Transactional Email API
+- Razorpay Payment Gateway
+- Vercel Hosting
+- Custom Domain Configuration
 
 ---
 
 # Future Enhancements
 
-* Live Classes Integration
-* AI-Based Course Recommendations
-* Certificate Generation
-* Discussion Forums
-* Multi-Language Support
-* Dark/Light Theme
-
-
----
-
-# Screenshots
-
-Add project screenshots here.
+- AI-Based Course Recommendations
+- Live Classes
+- Certificate Generation
+- Discussion Forums
+- Course Wishlist
+- Notifications
+- Multi-Language Support
+- Dark/Light Theme
 
 ---
+
 
 # Author
 
-Developed by Sujeet Pal.
+**Sujeet Pal**
+
+- GitHub: https://github.com/Sujeetp937
 
 ---
 
