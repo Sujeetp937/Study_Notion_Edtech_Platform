@@ -10,11 +10,7 @@ The application features JWT authentication, OTP-based email verification, secur
 
 # 🚀 Live Demo
 
-### Frontend
 https://www.teachmate.tech
-
-### Backend API
-https://api.teachmate.tech
 
 ---
 
@@ -22,30 +18,30 @@ https://api.teachmate.tech
 
 ## Student Features
 
-- User Authentication (Signup/Login)
-- Email Verification using OTP
-- Forgot & Reset Password
-- Browse Course Categories
-- Course Enrollment
-- Razorpay Payment Integration
-- Watch Course Videos
-- Track Course Progress
-- Ratings & Reviews
-- Responsive Dashboard
+* User Authentication (Signup/Login)
+* Email Verification using OTP
+* Forgot & Reset Password
+* Browse Course Categories
+* Course Enrollment
+* Razorpay Payment Integration
+* Watch Course Videos
+* Track Course Progress
+* Ratings & Reviews
+* Responsive Dashboard
 
 ## Instructor Features
 
-- Create Courses
-- Add Sections & Subsections
-- Upload Course Thumbnails & Videos
-- Publish/Unpublish Courses
-- Edit/Delete Courses
-- Instructor Dashboard
+* Create Courses
+* Add Sections & Subsections
+* Upload Course Thumbnails & Videos
+* Publish/Unpublish Courses
+* Edit/Delete Courses
+* Instructor Dashboard
 
 ## Admin Features
 
-- Manage Categories
-- Manage Platform Data
+* Manage Categories
+* Manage Platform Data
 
 ---
 
@@ -53,37 +49,37 @@ https://api.teachmate.tech
 
 ## Frontend
 
-- React.js
-- Vite
-- Redux Toolkit
-- Tailwind CSS
-- React Router DOM
-- Axios
-- Swiper.js
+* React.js
+* Vite
+* Redux Toolkit
+* Tailwind CSS
+* React Router DOM
+* Axios
+* Swiper.js
 
 ## Backend
 
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- JWT Authentication
-- Brevo (Transactional Email API)
-- Razorpay
-- Cloudinary
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* Brevo (Transactional Email API)
+* Razorpay
+* Cloudinary
 
 ## Database
 
-- MongoDB Atlas
+* MongoDB Atlas
 
 ## Deployment
 
-- **Frontend:** Vercel
-- **Backend:** AWS EC2
-- **Reverse Proxy:** Nginx
-- **Process Manager:** PM2
-- **SSL:** Let's Encrypt
-- **Domain:** teachmate.tech
+* **Frontend:** Vercel
+* **Backend:** AWS EC2
+* **Reverse Proxy:** Nginx
+* **Process Manager:** PM2
+* **SSL:** Let's Encrypt
+* **Domain:** teachmate.tech
 
 ---
 
@@ -242,27 +238,27 @@ http://localhost:5173
 
 ## Authentication
 
-- POST `/api/v1/auth/signup`
-- POST `/api/v1/auth/login`
-- POST `/api/v1/auth/sendotp`
-- POST `/api/v1/auth/reset-password-token`
-- POST `/api/v1/auth/reset-password`
+* POST `/api/v1/auth/signup`
+* POST `/api/v1/auth/login`
+* POST `/api/v1/auth/sendotp`
+* POST `/api/v1/auth/reset-password-token`
+* POST `/api/v1/auth/reset-password`
 
 ## Courses
 
-- POST `/api/v1/course/createCourse`
-- GET `/api/v1/course/showAllCategories`
-- POST `/api/v1/course/getCategoryPageDetails`
+* POST `/api/v1/course/createCourse`
+* GET `/api/v1/course/showAllCategories`
+* POST `/api/v1/course/getCategoryPageDetails`
 
 ## Payments
 
-- POST `/api/v1/payment/capturePayment`
-- POST `/api/v1/payment/verifySignature`
+* POST `/api/v1/payment/capturePayment`
+* POST `/api/v1/payment/verifySignature`
 
 ## Ratings & Reviews
 
-- POST `/api/v1/course/createRating`
-- GET `/api/v1/course/getReviews`
+* POST `/api/v1/course/createRating`
+* GET `/api/v1/course/getReviews`
 
 ---
 
@@ -270,63 +266,62 @@ http://localhost:5173
 
 ## Frontend (Vercel)
 
-- Deploy React application on Vercel
-- Configure environment variables
-- Connect custom domain (`teachmate.tech`)
-- Enable HTTPS
+* Deploy React application on Vercel
+* Configure environment variables
+* Connect custom domain (`teachmate.tech`)
+* Enable HTTPS
 
 ## Backend (AWS EC2)
 
-- Launch Ubuntu EC2 Instance
-- Configure Security Groups
-- Install Node.js & NPM
-- Clone GitHub Repository
-- Configure Environment Variables
-- Install Dependencies
-- Configure PM2 for Process Management
-- Configure Nginx Reverse Proxy
-- Secure API using Let's Encrypt SSL
-- Connect Backend with Custom Subdomain (`api.teachmate.tech`)
+* Launch Ubuntu EC2 Instance
+* Configure Security Groups
+* Install Node.js & NPM
+* Clone GitHub Repository
+* Configure Environment Variables
+* Install Dependencies
+* Configure PM2 for Process Management
+* Configure Nginx Reverse Proxy
+* Secure API using Let's Encrypt SSL
+* Connect Backend with Custom Subdomain (`api.teachmate.tech`)
 
 ---
 
 # Production Infrastructure
 
-- AWS EC2 (Ubuntu)
-- PM2 Process Manager
-- Nginx Reverse Proxy
-- Let's Encrypt SSL
-- MongoDB Atlas
-- Cloudinary CDN
-- Brevo Transactional Email API
-- Razorpay Payment Gateway
-- Vercel Hosting
-- Custom Domain Configuration
+* AWS EC2 (Ubuntu)
+* PM2 Process Manager
+* Nginx Reverse Proxy
+* Let's Encrypt SSL
+* MongoDB Atlas
+* Cloudinary CDN
+* Brevo Transactional Email API
+* Razorpay Payment Gateway
+* Vercel Hosting
+* Custom Domain Configuration
 
 ---
 
 # Future Enhancements
 
-- AI-Based Course Recommendations
-- Live Classes
-- Certificate Generation
-- Discussion Forums
-- Course Wishlist
-- Notifications
-- Multi-Language Support
-- Dark/Light Theme
+* AI-Based Course Recommendations
+* Live Classes
+* Certificate Generation
+* Discussion Forums
+* Course Wishlist
+* Notifications
+* Multi-Language Support
+* Dark/Light Theme
 
 ---
-
 
 # Author
 
 **Sujeet Pal**
 
-- GitHub: https://github.com/Sujeetp937
+* GitHub: https://github.com/Sujeetp937
 
 ---
 
 # License
 
-This project is developed for educational and learning purposes.
+This project is developed for educational and learning purpo
