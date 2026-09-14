@@ -30,7 +30,7 @@ exports.resetPasswordToken = async (req, res) => {
 
 
         // create url
-        const url = `https://study-notion-edtech-platform-18.vercel.app/update-password/${token}`;
+        const url = `https://www.teachmate.tech/update-password/${token}`;
 
         // send email containing url
         await mailSender(email, 'Password Reset Link', `Password Reset Link : ${url}`);
